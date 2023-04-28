@@ -1,0 +1,22 @@
+[
+  {
+    "id": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
+    "title": "DEXTools PEPE/WETH Trading Chart",
+    "query": "theme=dark&chartType=1&chartResolution=15&drawingToolbars=false"
+  },
+  {
+    "id": "0x4a2b28e8d0bba7da0db5e7c7fa114d61190aaa35",
+    "title": "DEXTools PIKACHU/WETH Trading Chart",
+    "query": "theme=dark&chartType=1&chartResolution=15&drawingToolbars=false"
+  },
+  {
+    "id": "0xb953c761ad755d073d7c0276c89ce15fe13e760a",
+    "title": "DEXTools Trading Chart",
+    "query": "theme=dark&chartType=1&chartResolution=15&drawingToolbars=false"
+  },
+  {
+    "id": "0x2609a5ad3ab1c2cc7ad769fb6af6ef657057200f",
+    "title": "DEXTools GAMA/WETH Trading Chart",
+    "query": "theme=dark&chartType=1&chartResolution=15&drawingToolbars=false"
+  }
+]
