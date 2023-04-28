@@ -18,12 +18,14 @@
     >
       <a
         href="javascript:void(0);"
+        @click="remove"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Remove
       </a>
       <a
         href="javascript:void(0);"
+        @click="update"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Update
@@ -39,15 +41,34 @@ let dropdownPopoverShow = ref(false)
 let btnDropdownRef = ref(null)
 let popoverDropdownRef = ref(null)
 
-const toggleDropdown = (event: any) => {
-  event.preventDefault()
-  if (dropdownPopoverShow.value) {
+defineProps<{ chartId: string }>()
+const emit = defineEmits<{
+  (e: 'remove', id: string): void
+  (e: 'update', id: string): void
+}>()
+
+const remove = (id: string) => {
+  emit('remove', id)
+  console.log('remove')
+  toggleDropdown(null, true)
+}
+
+const update = (id: string) => {
+  emit('update', id)
+  console.log('update')
+  toggleDropdown(null, true)
+}
+
+const toggleDropdown = (event?: any, reset = false) => {
+  event?.preventDefault()
+  if (dropdownPopoverShow.value || reset) {
     dropdownPopoverShow.value = false
   } else {
     dropdownPopoverShow.value = true
     createPopper(btnDropdownRef.value, popoverDropdownRef.value, {
       placement: 'bottom-start'
     })
+    setTimeout(() => toggleDropdown(null, true), 5 * 1000)
   }
 }
 </script>

@@ -4,6 +4,16 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useChartStore } from '../stores/charts'
+
+onMounted(() => {
+  const chartStore = useChartStore()
+  chartStore.loadCharts()
+})
+</script>
+
 <style scoped>
 header {
   line-height: 1.5;

@@ -32,17 +32,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 
 import { useChartStore } from '../../../stores/charts'
 
 const chartStore = useChartStore()
 const { charts, loaded } = storeToRefs(chartStore)
-
-onMounted(() => {
-  chartStore.loadCharts()
-})
 </script>
 
 <style scoped></style>
