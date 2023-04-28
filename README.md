@@ -1,6 +1,7 @@
-# dextools-charts-2
+# Dex Coin monitor
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple coin monitoring app (in development) to monitor Coins on [dextools.io](https://dextools.io)
+
 
 ## Recommended IDE Setup
 
