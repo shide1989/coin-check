@@ -41,20 +41,20 @@ let dropdownPopoverShow = ref(false)
 let btnDropdownRef = ref(null)
 let popoverDropdownRef = ref(null)
 
-defineProps<{ chartId: string }>()
+const props = defineProps<{ chartId: string }>()
 const emit = defineEmits<{
   (e: 'remove', id: string): void
   (e: 'update', id: string): void
 }>()
 
-const remove = (id: string) => {
-  emit('remove', id)
+const remove = () => {
+  emit('remove', props.chartId)
   console.log('remove')
   toggleDropdown(null, true)
 }
 
-const update = (id: string) => {
-  emit('update', id)
+const update = () => {
+  emit('update', props.chartId)
   console.log('update')
   toggleDropdown(null, true)
 }
@@ -65,7 +65,7 @@ const toggleDropdown = (event?: any, reset = false) => {
     dropdownPopoverShow.value = false
   } else {
     dropdownPopoverShow.value = true
-    createPopper(btnDropdownRef.value, popoverDropdownRef.value, {
+    createPopper(btnDropdownRef.value!, popoverDropdownRef.value!, {
       placement: 'bottom-start'
     })
     setTimeout(() => toggleDropdown(null, true), 5 * 1000)

@@ -38,7 +38,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts" setup>
 //import AdminNavbar from '@/components/Navbars/AdminNavbar.vue'
 //import Sidebar from '@/components/Sidebar/Sidebar.vue'
 //import HeaderStats from '@/components/Headers/HeaderStats.vue'
@@ -48,17 +48,4 @@
 
 import ChartStats from '@/components/charts/ChartStats.vue'
 import SideBar from '@/components/sidebar/SideBar.vue'
-export default {
-  name: 'admin-layout',
-  components: {
-    ChartStats,
-    SideBar
-    //HelloWorld,
-    //ChartList
-    //AdminNavbar,
-    //Sidebar,
-    //HeaderStats,
-    //FooterAdmin
-  }
-}
 </script>
